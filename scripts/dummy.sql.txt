@@ -1,0 +1,39 @@
+INSERT INTO User (firstName, lastName, phoneNumber, email) VALUES
+('Omar', 'Flayan', '123-456-7890', 'omar.flayan@gmail.com'),
+('Reena', 'Flayan', '098-765-4321', 'reena.flayan@gmail.com');
+('Omar1', 'Flayan', '123-456-7891', 'omar.flayan1@gmail.com'),
+('Omar2', 'Flayan', '123-456-7892', 'omar.flayan2@gmail.com');
+('Reena1', 'Flayan', '098-765-4321', 'reena.flayan1@gmail.com'),
+('Reena2', 'Flayan', '098-765-4322', 'reena.flayan2@gmail.com');
+
+
+-- Inserting dummy Address data for Fairfield, IA
+INSERT INTO Address (city, street, state) VALUES
+('Fairfield', '123 Sunshine Blvd', 'IA'),
+('Fairfield', '456 Moonlight Ave', 'IA');
+
+
+INSERT INTO Dentist (userId, specialization) VALUES
+(1, 'Orthodontist');
+(3, 'Periodontist'),
+(4, 'Pedodontist');
+
+INSERT INTO Patient (userId, dateOfBirth, mailingAddressId) VALUES
+(2, '1980-01-01', 2);
+(5, '1985-02-02', 3),
+(6, '1990-03-03', 4);
+
+INSERT INTO Surgery (name, telNumber, addressId) VALUES
+('ADS Fairfield', '321-654-0987', 1);
+('ADS Fairfield1', '321-654-0988', 3),
+('ADS Fairfield2', '321-654-0989', 4);
+
+
+-- Inserting Appointment data
+INSERT INTO Appointment (dentistId, patientId, date, time, surgeryId) VALUES
+(1, 2, '2024-04-15', '14:00:00', 1);
+(3, 5, '2024-04-16', '09:00:00', 2),
+(4, 6, '2024-04-17', '10:00:00', 3),
+(1, 5, '2024-04-18', '11:00:00', 1),
+(3, 6, '2024-04-19', '12:00:00', 2),
+(1, 5, '2024-04-20', '13:00:00', 1);
