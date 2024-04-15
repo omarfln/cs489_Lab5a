@@ -1,4 +1,4 @@
---List of all dentists registered in the system:
+-- List of all dentists registered in the system:
 
 SELECT d.id, u.firstName, u.lastName, u.phoneNumber, u.email, d.specialization
 FROM Dentist d
@@ -6,7 +6,7 @@ JOIN User u ON d.userId = u.id
 ORDER BY u.lastName ASC;
 
 
---List of all appointments for a given dentist by their ID:
+-- List of all appointments for a given dentist by their ID:
 
 SELECT a.date, a.time, pat.firstName, pat.lastName, pat.phoneNumber, pat.email
 FROM Appointment a
@@ -16,7 +16,7 @@ WHERE d.userId = 3;
 
 
 
---List of all appointments scheduled at a Surgery Location:
+-- List of all appointments scheduled at a Surgery Location:
 
 SELECT a.date, a.time, den.firstName AS dentistFirstName, den.lastName AS dentistLastName, pat.firstName AS patientFirstName, pat.lastName AS patientLastName
 FROM Appointment a
@@ -27,7 +27,7 @@ JOIN User pat ON p.userId = pat.id
 JOIN Surgery s ON a.surgeryId = s.id
 WHERE s.name = "ADS Fairfield1";
 
---List of appointments booked for a given patient on a given date:
+-- List of appointments booked for a given patient on a given date:
 
 SELECT a.date, a.time, den.firstName, den.lastName
 FROM Appointment a
@@ -35,5 +35,5 @@ JOIN Patient p ON a.patientId = p.userId
 JOIN User pat ON p.userId = pat.id
 JOIN Dentist d ON a.dentistId = d.userId
 JOIN User den ON d.userId = den.id
-WHERE pat.id = 5 AND a.date = "2024-04-20"';
+WHERE pat.id = 5 AND a.date = "2024-04-20";
 
